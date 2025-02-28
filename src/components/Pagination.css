@@ -1,0 +1,10 @@
+.pagination {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 2rem;
+}
+
+.next-page {
+  grid-column: 2;
+  justify-self: end;
+}

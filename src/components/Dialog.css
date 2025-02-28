@@ -1,0 +1,47 @@
+.dialog {
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius-primary);
+}
+
+.dialog-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.close-button svg {
+  height: 2rem;
+}
+
+.dialog-body {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: baseline;
+
+  & p {
+    margin: 0;
+  }
+
+  & .img {
+    display: block;
+    width: 100%;
+    grid-column: span 2;
+  }
+
+  & .name {
+    margin: 0;
+  }
+
+  & .age {
+    justify-self: end;
+  }
+
+  & .breed {
+    grid-column: span 2;
+  }
+
+  & .zip {
+    /* justify-self: end; */
+  }
+}

@@ -1,0 +1,73 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --midnight: #150133;
+  --accent: #ffa900;
+
+  --border-color-primary: #ccc;
+  --border-radius-primary: 1rem;
+}
+
+body {
+  margin: 0;
+  color: var(--midnight);
+  /* display: flex; */
+  /* place-items: center; */
+}
+
+button {
+  color: var(--midnight);
+}
+
+.app-body {
+  margin: auto;
+  padding: 2rem;
+  max-width: 80rem;
+}
+
+.button-primary {
+  cursor: pointer;
+  border-radius: 0.5rem;
+  /* border: 2px solid #150133; */
+  border: 0;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  background: var(--midnight);
+
+  &:hover {
+    color: var(--midnight);
+    background: var(--accent);
+  }
+}
+
+.button-icon {
+  cursor: pointer;
+  display: flex;
+  place-items: center;
+  border: 0;
+  border-radius: 0;
+  background: none;
+
+  & svg {
+    height: 1.5rem;
+  }
+}
+
+.inline-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  & svg {
+    height: 1em;
+  }
+}
