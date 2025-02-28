@@ -48,6 +48,7 @@ function RouteComponent() {
     },
   ];
 
+  // Get array of Dogs from an array of Dog IDs
   const getDogsFromIDs = useCallback(async (ids: string[]) => {
     const res = await fetch('https://frontend-take-home-service.fetch.com/dogs', {
       credentials: 'include',
@@ -60,6 +61,7 @@ function RouteComponent() {
     return await res.json();
   }, []);
 
+  // Search using filters
   const searchDogs = useCallback(
     async (filters: SearchOptions) => {
       const options = { ...filters };
@@ -85,9 +87,10 @@ function RouteComponent() {
       setNext(dogIDs.next);
       setCount(dogIDs.total);
     },
-    [getDogsFromIDs]
+    [getDogsFromIDs, navigate]
   );
 
+  // Update URL parameters
   const updateParams = (options: SearchOptions) => {
     navigate({
       search: {
@@ -97,6 +100,7 @@ function RouteComponent() {
     });
   };
 
+  // Sort
   const toggleSortOrder = () => {
     const newSort = sortOrder === 'asc' ? 'desc' : 'asc';
     setSortOrder(newSort);
@@ -112,6 +116,7 @@ function RouteComponent() {
     }
   };
 
+  // Favorites
   const addToFavorites = (dog: Dog) => {
     setFavorites([...favorites, dog]);
   };
@@ -120,6 +125,7 @@ function RouteComponent() {
     setFavorites(favorites.filter((fav) => fav.id !== dog.id));
   };
 
+  // Matches
   const findMatch = async () => {
     const res = await fetch('https://frontend-take-home-service.fetch.com/dogs/match', {
       method: 'POST',
@@ -134,6 +140,7 @@ function RouteComponent() {
     matchDialogRef.current?.showModal();
   };
 
+  // Get breeds on load
   useEffect(() => {
     const getBreeds = async () => {
       const res = await fetch('https://frontend-take-home-service.fetch.com/dogs/breeds', {
@@ -150,6 +157,7 @@ function RouteComponent() {
     }
   }, [breeds.length, dogs.length, navigate]);
 
+  // Search on change of params
   useEffect(() => {
     searchDogs(params);
   }, [params, searchDogs]);
