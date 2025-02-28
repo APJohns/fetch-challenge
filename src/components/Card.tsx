@@ -30,7 +30,7 @@ export default function Card({ isFavorite = false, onAdd, onRemove, ...dog }: Pr
       <button className="card-button" type="button" onClick={toggleFavorite}>
         <div className="card-header">
           <div className="card-img-container">
-            <img src={dog.img} alt="" className="card-img" />
+            <img src={dog.img} alt={`Picture of ${dog.name}`} className="card-img" />
           </div>
           <div className={`favorite${isActive ? ' active' : ''}`}>
             <svg
