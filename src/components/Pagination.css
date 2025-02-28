@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: auto auto;
   margin-top: 2rem;
+  justify-items: start;
 }
 
 .next-page {

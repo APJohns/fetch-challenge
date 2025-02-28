@@ -59,3 +59,9 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+@media (min-width: 96rem) {
+  .filters {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}

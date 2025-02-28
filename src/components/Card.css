@@ -1,10 +1,13 @@
 .card {
-  border: 1px solid var(--border-color-primary);
+  /* border: 1px solid var(--border-color-primary); */
+  box-shadow: 0 0 1.2rem var(--border-color-primary);
   border-radius: var(--border-radius-primary);
   --border-radius-inner: calc(var(--border-radius-primary) - 1px);
+  background: white;
 }
 
 .card-button {
+  text-align: left;
   cursor: pointer;
   display: block;
   border-radius: var(--border-radius-inner);
@@ -53,9 +56,14 @@
   }
 }
 
-.card-img {
+.card-img-container {
   grid-column: 1;
   grid-row: 1;
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+
+.card-img {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   aspect-ratio: 1/1;
@@ -65,15 +73,7 @@
 .card-body {
   padding: 1rem;
 
-  & p,
-  h2 {
+  h3 {
     margin: 0;
   }
-}
-
-.card-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  margin-top: 0.5rem;
 }

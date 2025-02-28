@@ -1,6 +1,7 @@
 import { ComponentPropsWithRef } from 'react';
 import { Dog } from '../types';
 import './Dialog.css';
+import DogDetails from './DogDetails';
 
 interface Props extends ComponentPropsWithRef<'dialog'> {
   dog?: Dog;
@@ -33,9 +34,7 @@ export default function Dialog({ dog, ref, onClose }: Props) {
           <div className="dialog-body">
             <img src={dog.img} alt={`Picture of ${dog.name}`} className="img" />
             <h3 className="name">{dog.name}</h3>
-            <p className="age">{dog.age} years old</p>
-            <p className="breed">{dog.breed}</p>
-            <p className="zip">Zip Code: {dog.zip_code}</p>
+            <DogDetails age={dog.age} breed={dog.breed} zip_code={dog.zip_code} />
           </div>
         </>
       )}

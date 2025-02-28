@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Dog } from '../types';
 import './Card.css';
+import DogDetails from './DogDetails';
 
 interface Props extends Dog {
   isFavorite?: boolean;
@@ -28,7 +29,9 @@ export default function Card({ isFavorite = false, onAdd, onRemove, ...dog }: Pr
     <li className="card">
       <button className="card-button" type="button" onClick={toggleFavorite}>
         <div className="card-header">
-          <img src={dog.img} alt="" className="card-img" />
+          <div className="card-img-container">
+            <img src={dog.img} alt="" className="card-img" />
+          </div>
           <div className={`favorite${isActive ? ' active' : ''}`}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -47,12 +50,8 @@ export default function Card({ isFavorite = false, onAdd, onRemove, ...dog }: Pr
           </div>
         </div>
         <div className="card-body">
-          <h2 className="card-name">{dog.name}</h2>
-          <div className="card-details">
-            <p className="card-age">{dog.age} years old</p>
-            <p className="card-breed">{dog.breed}</p>
-            <p className="card-zip">Zip Code: {dog.zip_code}</p>
-          </div>
+          <h3 className="card-name">{dog.name}</h3>
+          <DogDetails age={dog.age} breed={dog.breed} zip_code={dog.zip_code} />
         </div>
       </button>
     </li>
